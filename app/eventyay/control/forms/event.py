@@ -1571,3 +1571,10 @@ ConfirmTextFormset = formset_factory(
     can_delete=True,
     extra=0,
 )
+
+
+class QuickSetupConfirmationForm(I18nForm):
+    create_tickets = forms.BooleanField(required=False, initial=True)
+    create_talk = forms.BooleanField(required=False, initial=True)
+    create_video = forms.BooleanField(required=False, initial=True)
+    is_series = forms.BooleanField(required=False, initial=False)

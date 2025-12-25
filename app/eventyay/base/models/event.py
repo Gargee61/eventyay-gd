@@ -2865,3 +2865,4 @@ class EventView(models.Model):
 
     class Meta:
         indexes = [models.Index(fields=['start'])]
+

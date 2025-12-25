@@ -1786,3 +1786,20 @@ class QuickSetupView(FormView):
             if self.request.method != 'POST'
             else [],
         )
+
+def form_valid(self, form):
+    """
+    Called when the form is valid.
+    All components are created automatically via signals.
+    """
+    self.object = form.save()
+    
+    messages.success(
+        self.request,
+        f'Event "{self.object.name}" created successfully! '
+        'All components (Tickets, Talk, Video) have been initialized.'
+    )
+    
+    return redirect('control:event.index', 
+                   organizer=self.request.organizer.slug,
+                   event=self.object.slug)

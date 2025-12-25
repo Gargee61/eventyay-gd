@@ -37,3 +37,24 @@
         {% endif %}
     {% endif %}
 {% endblock %}
+
+
+
+<div class="form-group">
+    <label>Create this event for:</label>
+    <input type="checkbox" name="create_tickets" /> Tickets
+    <input type="checkbox" name="create_talk" /> Talk
+    <input type="checkbox" name="create_video" /> Video
+</div>
+
+
+<div class="alert alert-info">
+    Your event will be created with Tickets, Talk, and Video components automatically enabled. 
+    You can configure each component after creation.
+</div>
+
+
+<div class="form-group">
+    <label>Event series or time slot booking</label>
+    <input type="checkbox" name="is_series" />
+</div>
